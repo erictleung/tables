@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-@test "Addition using bc" {
-  result="$(echo 2+2 | bc)"
+@test "Simple Addition" {
+  result=$((2+2))
   [ "$result" -eq 4 ]
 }
