@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 install: git clone --depth 1 https://github.com/sstephenson/bats.git
 
