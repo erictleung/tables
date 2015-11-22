@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+function cmd_version {
+    echo "tables 0.1.0"
+}
+
+function cmd_usage {
+    cmd_version
+    echo
+    cat <<_EOF
+Usage:
+    tables [options] file
+
+Options:
+    $PROGRAM
+        Show options for converting files to LaTeX tables.
+    $PROGRAM help
+        Show this text.
+    $PROGRAM version
+        Show version information.
+_EOF
+}
+
+PROGRAM="${0##*/}"
+
+case "$1" in
+    help|--help) shift;             cmd_usage "$@";;
+    version|--version|-v) shift;    cmd_version "$@";;
+    *) shift;                       cmd_usage "$@";;
+esac
+exit 0
