@@ -1,7 +1,7 @@
-sudo: required
+sudo: false
 
 install: git clone --depth 1 https://github.com/sstephenson/bats.git
 
 language: bash
 
-script: PATH="./bats/bin:$PATH" test/run_tests
+script: ./bats/bin/bats test/run_tests.bats
