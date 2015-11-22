@@ -1,5 +1,7 @@
 # tables
 
+[![Build Status](https://travis-ci.org/erictleung/tables.svg?branch=master)](https://travis-ci.org/erictleung/tables)
+
 Convert various delimited text files to LaTeX tables.
 
 ## To Do
