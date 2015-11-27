@@ -21,11 +21,19 @@ Options:
 _EOF
 }
 
+function cmd_main {
+    NUMCOLS=$(head -n 1 $1 | awk '{ print NF }')
+    ALIGN="$(printf "%0.s c" $(seq $NUMCOLS)) "
+
+    printf "\\\begin{tabular}{$ALIGN}\n"
+    printf "\\\end{tabular}\n"
+}
+
 PROGRAM="${0##*/}"
 
 case "$1" in
     help|--help) shift;             cmd_usage "$@";;
     version|--version|-v) shift;    cmd_version "$@";;
-    *) shift;                       cmd_usage "$@";;
+    *)                              cmd_main "$@";;
 esac
 exit 0
