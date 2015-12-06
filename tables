@@ -26,6 +26,7 @@ function cmd_main {
     ALIGN="$(printf "%0.s c" $(seq $NUMCOLS)) "
 
     printf "\\\begin{tabular}{$ALIGN}\n"
+    printf "$(sed "s/,/ \& /g" $1 | sed "s/$/ \\\\\\\\\\\/g" | column -t) \n"
     printf "\\\end{tabular}\n"
 }
 
