@@ -22,7 +22,7 @@ _EOF
 }
 
 function cmd_main {
-    NUMCOLS=$(head -n 1 $1 | awk '{ print NF }')
+    NUMCOLS=$(head -n 1 $1 | awk -F "," '{ print NF }')
     ALIGN="$(printf "%0.s c" $(seq $NUMCOLS)) "
 
     printf "\\\begin{tabular}{$ALIGN}\n"
