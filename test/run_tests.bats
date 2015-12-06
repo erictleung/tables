@@ -4,7 +4,7 @@ load test_helper
 
 @test "Simple 4 col 1 row .csv conversion" {
     FILE=simple
-    ../tables ./original/$FILE.csv > ./change/$FILE.tex
-    result=$(diff ./solution/$FILE.tex ./change/$FILE.tex)
+    ./tables ./test/original/$FILE.csv > ./test/change/$FILE.tex
+    result=$(diff ./test/solution/$FILE.tex ./test/change/$FILE.tex)
     [ -z $result ]
 }

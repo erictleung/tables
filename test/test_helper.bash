@@ -1,3 +1,3 @@
 # Helpers to run bats
 
-mkdir -p change
+mkdir -p test/change
